@@ -1,0 +1,45 @@
+<ion-view view-title="Sign Up">
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">First Name</span>
+        <input type="text" placeholder="First Name"  required="required" ng-model="user.FName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Last Name</span>
+        <input type="text" placeholder="Last Name"  required="required" ng-model="user.LName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Phone No.</span>
+        <input type="number" placeholder="Phone No."  required="required" ng-model="user.PhoneNo">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Email"  required="required" ng-model="user.Email">
+      </label>
+
+      <label class="item item-input item-select">
+        <span class="input-label">Blood Group</span>
+        <select name="Blood Group"  ng-model="user.BloodGroup">
+          <option value="A Positive">A Positive</option>
+          <option value="B Positive">B Positive</option>
+          <option value="O Positive">O Positive</option>
+          <option value="A Negative">A Negative</option>
+          <option value="B Negative">B Negative</option>
+          <option value="O Negative">O Negative</option>
+
+        </select>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password" required="required" ng-model="user.Password">
+      </label>
+
+    </div>
+    <div class="button-bar">
+      <button class="button button-positive" ng-click="createUser(user)">Create Account</button>
+      <button class="button button-calm" ui-sref="login">Login</button>
+    </div>
+
+  </ion-content>
+</ion-view>

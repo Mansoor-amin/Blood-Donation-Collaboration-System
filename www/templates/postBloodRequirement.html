@@ -1,0 +1,110 @@
+<ion-view view-title="Post Blood Requirement">
+  <ion-content>
+
+    <ion-list>
+      <ion-item>
+        <h2>Blood Group:</h2>
+        <label class="item item-select">
+          {{post.BloodGroup}}
+          <select name="Blood Group" required  ng-model="post.BloodGroup">
+            <option value="" style="display: none"></option>
+            <option value="A Positive" selected>A Positive</option>
+            <option value="B Positive">B Positive</option>
+            <option value="O Positive">O Positive</option>
+            <option value="A Negative">A Negative</option>
+            <option value="B Negative">B Negative</option>
+            <option value="O Negative">O Negative</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>No of Unit required:</h2>
+        <label class="item item-input item-floating-label">
+          <input type="number" placeholder="No of Unit required"  required="required" ng-model="post.RequiredUnit">
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>Urgency:</h2>
+        <label class="item item-select">
+          {{post.Urgency}}
+          <select name="Urgency" required  ng-model="post.Urgency">
+            <option value="" style="display: none"></option>
+            <option value="Urgent" >Urgent</option>
+            <option value="Within 5 hours" selected>Within 5 hours</option>
+            <option value="Within 12 hours">Within 12 hours</option>
+            <option value="Within 24 hours">Within 24 hours</option>
+            <option value="Within 2 days">Within 2 days</option>
+            <option value="Within Week">Within Week</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>Country:</h2>
+        <label class="item item-select">
+          {{post.Country}}
+          <select name="Country" required  ng-model="post.Country">
+            <option value="" style="display: none"></option>
+            <option value="{{country.name}}" ng-repeat="country in countries" >{{country.name}} {{country.code}}</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>state:</h2>
+        <label class="item item-select">
+          {{post.State}}
+          <select name="state" required  ng-model="post.State">
+            <option value="" style="display: none"></option>
+            <option value="{{state.name}}" ng-repeat="state in states" >{{state.name}}</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>City:</h2>
+        <label class="item item-select">
+          {{post.City}}
+          <select name="City" required  ng-model="post.City">
+            <option value="" style="display: none"></option>
+            <option value="{{city.name}}" ng-repeat="city in cities" >{{city.name}}</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>Hospital:</h2>
+        <label class="item item-select">
+          {{post.Hospital}}
+          <select name="City" required  ng-model="post.Hospital">
+            <option value="" style="display: none"></option>
+            <option value="{{Hospital.name}}" ng-repeat="Hospital in Hospitals" >{{Hospital.name}}</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>Relation with Patient:</h2>
+        <label class="item item-select">
+          {{post.RelationWithPatient}}
+          <select name="City" required  ng-model="post.RelationWithPatient">
+            <option value="" style="display: none"></option>
+            <option value="{{RelationWithPatient.relation}}" ng-repeat="RelationWithPatient in RelationsWithPatient" >{{RelationWithPatient.relation}}</option>
+          </select>
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>Contact No.:</h2>
+        <label class="item item-input item-floating-label">
+          <input type="number" placeholder="Contact No." required="required" ng-model="post.ContactNo">
+        </label>
+      </ion-item>
+      <ion-item>
+        <h2>Additional instructions:</h2>
+        <label class="item item-input item-floating-label">
+          <textarea rows="4"  placeholder="Additional instructions:" ng-model="post.AdditionalInstructions"></textarea>
+        </label>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="row button-bar">
+      <button class="button button-outline button-positive" ng-click="createPost()">Create Post</button>
+    </div>
+  </ion-content>
+</ion-view>
